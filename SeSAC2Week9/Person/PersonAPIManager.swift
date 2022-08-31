@@ -11,7 +11,7 @@ class PersonAPIManager {
     
     static func requestPerson(_ query: String, completion: @escaping (Person?, APIError?) -> () ) {
         
-//        let url = URL(string:  "https://api.themoviedb.org/3/search/person?api_key=APIKey&language=en-US&query=\(query)&page=1&include_adult=false&region=ko-KR")!
+//        let url = URL(string:  "https://api.themoviedb.org/3/search/person?api_key=APIKey&language=en-US&query=\(query)&page=1&include_ adult=false&region=ko-KR")!
         
         let scheme = "https"
         let host = "api.themoviedb.org"
@@ -79,3 +79,4 @@ class PersonAPIManager {
         
     }
 }
+

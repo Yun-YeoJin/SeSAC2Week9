@@ -20,41 +20,49 @@ class ViewController: UIViewController {
     }
     @IBOutlet weak var lottoLabel: UILabel!
     
-    var list: Person = Person(page: 0, totalPage: 0, totalResults: 0, results: [])
+//    var list: Person = Person(page: 0, totalPage: 0, totalResults: 0, results: []) {
+//        didSet {
+//            tableView.reloadData()
+//        }
+//    }
+    
+    private var viewModel = PersonViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        LottoAPIManager.requestLotto(1025) { lotto, error in
-            
-            guard let lotto = lotto else {
-                return
-            }
-                self.lottoLabel.text = lotto.drwNoDate
+//        LottoAPIManager.requestLotto(1025) { lotto, error in
+//
+//            guard let lotto = lotto else {
+//                return
+//            }
+//                self.lottoLabel.text = lotto.drwNoDate
+//
+//        }
+        
+        viewModel.fetchPerson(query: "kim")
+        
+        viewModel.list.bind { person in
+
+            self.tableView.reloadData()
             
         }
         
-        PersonAPIManager.requestPerson("Kim") { person, error in
-            guard let person = person else {
-                return
-            }
-           dump(person)
-            self.list = person
-            self.tableView.reloadData()
-        }
     }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.results.count //옵셔널이라서 nil이 올 수 있다.
+        return viewModel.numberOfRowsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        cell.textLabel?.text = list.results[indexPath.row].name
-        cell.detailTextLabel?.text = list.results[indexPath.row].knownForDepartment
+        
+        let data = viewModel.cellForRowAt(at: indexPath)
+        cell.textLabel?.text = data.name
+        cell.detailTextLabel?.text = data.knownForDepartment
         return cell
     }
     
