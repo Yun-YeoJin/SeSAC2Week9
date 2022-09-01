@@ -32,25 +32,51 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-//        LottoAPIManager.requestLotto(1025) { lotto, error in
-//
-//            guard let lotto = lotto else {
-//                return
-//            }
-//                self.lottoLabel.text = lotto.drwNoDate
-//
-//        }
+        let exmaple = User("고래밥")
+        
+        exmaple.bind { name in
+            print("이름이 \(name)으로 바뀌었습니다.")
+        }
+        
+        exmaple.value = "칙촉"
+        exmaple.value = "아따맘마"
+        
+        let sample = User([1,2,3,4,5,])
+        
+        sample.bind { value in
+            print(value)
+        }
+        
+        var number1 = 10
+        var number2 = 3
+        
+        print(number1 - number2)
+        
+        number1 = 3
+        number2 = 1
+        
+        var number3 = Observable(10)
+        var number4 = Observable(3)
+        
+        number3.bind { a in // 값이 달라지면 밑에 있던 것이 올라가서 표시가 되는거지???
+             print("Observable", number3.value - number4.value)
+        }
+        
+        number3.value = 100
+        number3.value = 200
+        number3.value = 50
         
         viewModel.fetchPerson(query: "kim")
-        
         viewModel.list.bind { person in
-
+            print("viewController bind")
             self.tableView.reloadData()
-            
         }
+        
+        
         
     }
 }
+
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

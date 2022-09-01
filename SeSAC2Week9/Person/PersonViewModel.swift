@@ -20,7 +20,6 @@ class PersonViewModel {
            dump(person)
             self.list.value = person
         }
-        
     }
     
     var numberOfRowsInSection: Int {
@@ -31,7 +30,6 @@ class PersonViewModel {
         
         return list.value.results[indexPath.row]
     }
-    
 }
 
 

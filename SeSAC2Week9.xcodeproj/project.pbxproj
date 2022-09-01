@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		AE123DE628BEFC5500CC18CD /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE123DE528BEFC5500CC18CD /* PersonViewModel.swift */; };
+		AE123E3728C05B1F00CC18CD /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE123E3628C05B1F00CC18CD /* LottoViewController.swift */; };
+		AE123E3928C0BE8500CC18CD /* LottoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE123E3828C0BE8500CC18CD /* LottoViewModel.swift */; };
+		AE123E3C28C0BECE00CC18CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE123E3B28C0BECE00CC18CD /* LoginViewController.swift */; };
+		AE123E3E28C0BEDD00CC18CD /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE123E3D28C0BEDD00CC18CD /* LoginViewModel.swift */; };
 		AE4AE1E428BD94EE00EE6D43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4AE1E328BD94EE00EE6D43 /* AppDelegate.swift */; };
 		AE4AE1E628BD94EE00EE6D43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4AE1E528BD94EE00EE6D43 /* SceneDelegate.swift */; };
 		AE4AE1E828BD94EE00EE6D43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4AE1E728BD94EE00EE6D43 /* ViewController.swift */; };
@@ -26,6 +30,10 @@
 
 /* Begin PBXFileReference section */
 		AE123DE528BEFC5500CC18CD /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
+		AE123E3628C05B1F00CC18CD /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
+		AE123E3828C0BE8500CC18CD /* LottoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewModel.swift; sourceTree = "<group>"; };
+		AE123E3B28C0BECE00CC18CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AE123E3D28C0BEDD00CC18CD /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AE4AE1E028BD94EE00EE6D43 /* SeSAC2Week9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC2Week9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE4AE1E328BD94EE00EE6D43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE4AE1E528BD94EE00EE6D43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE123E3A28C0BEBD00CC18CD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AE123E3B28C0BECE00CC18CD /* LoginViewController.swift */,
+				AE123E3D28C0BEDD00CC18CD /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		AE4AE1D728BD94EE00EE6D43 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +92,7 @@
 		AE4AE1E228BD94EE00EE6D43 /* SeSAC2Week9 */ = {
 			isa = PBXGroup;
 			children = (
+				AE123E3A28C0BEBD00CC18CD /* Login */,
 				AE4AE1FC28BDA72B00EE6D43 /* Person */,
 				AE4AE1F728BD94FD00EE6D43 /* Lotto */,
 				AE4AE1E328BD94EE00EE6D43 /* AppDelegate.swift */,
@@ -96,6 +114,8 @@
 			children = (
 				AE4AE1F828BD950D00EE6D43 /* LottoAPIManager.swift */,
 				AE4AE1FA28BD9BBC00EE6D43 /* LottoModel.swift */,
+				AE123E3628C05B1F00CC18CD /* LottoViewController.swift */,
+				AE123E3828C0BE8500CC18CD /* LottoViewModel.swift */,
 			);
 			path = Lotto;
 			sourceTree = "<group>";
@@ -182,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE123E3C28C0BECE00CC18CD /* LoginViewController.swift in Sources */,
 				AE4AE1E828BD94EE00EE6D43 /* ViewController.swift in Sources */,
 				AE4AE1E428BD94EE00EE6D43 /* AppDelegate.swift in Sources */,
 				AE4AE20428BDB69B00EE6D43 /* APIKey.swift in Sources */,
@@ -189,8 +210,11 @@
 				AE4AE1FB28BD9BBC00EE6D43 /* LottoModel.swift in Sources */,
 				AE4AE1FE28BDA73800EE6D43 /* PersonAPIManager.swift in Sources */,
 				AE4AE20628BDB77000EE6D43 /* URLSession+Extension.swift in Sources */,
+				AE123E3E28C0BEDD00CC18CD /* LoginViewModel.swift in Sources */,
 				AE4AE20D28BEF8D300EE6D43 /* Observable.swift in Sources */,
 				AE4AE20028BDA88B00EE6D43 /* Person.swift in Sources */,
+				AE123E3928C0BE8500CC18CD /* LottoViewModel.swift in Sources */,
+				AE123E3728C05B1F00CC18CD /* LottoViewController.swift in Sources */,
 				AE4AE1E628BD94EE00EE6D43 /* SceneDelegate.swift in Sources */,
 				AE4AE1F928BD950D00EE6D43 /* LottoAPIManager.swift in Sources */,
 			);
